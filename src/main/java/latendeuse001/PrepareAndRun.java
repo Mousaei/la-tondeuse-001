@@ -3,11 +3,13 @@
  */
 package latendeuse001;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
@@ -16,121 +18,199 @@ import java.util.StringTokenizer;
  */
 public class PrepareAndRun {
 	
-	Tendeuse uneTendeuse;
+	Tendeuse uneTendeuse = new Tendeuse();
 	
 	/**
+	 * @throws IOException 
 	 * 
 	 */
-	public PrepareAndRun() {
+	public PrepareAndRun() throws IOException {
 		// TODO Auto-generated constructor stub
 		try {
-		      File testFile = new File("TestResource");
-		      Scanner myReader = new Scanner(testFile);
+		      InputStream inputStream = getClass().getClassLoader().getResourceAsStream("TestResource");
+		      //creating an InputStreamReader object
+		      InputStreamReader isReader = new InputStreamReader(inputStream);
+		      //Creating a BufferedReader object
+		      BufferedReader reader = new BufferedReader(isReader);
+		      StringBuffer sb = new StringBuffer();
+		      String str="1";
+		      while((str = reader.readLine())!= null){
+		    	  
+		         sb.append(str + ";" );
+		      }
+		      System.out.println(sb.toString());
+	          
+		      
+		      
+		      StringTokenizer st= new StringTokenizer(sb.toString(), ";");
+		      
 		      int compteur = 0;
 		      
-		      try {
-		          File resulktFile = new File("ResultTestResource");
-		          if (resulktFile.createNewFile()) {
-		            System.out.println("File created: " + resulktFile.getName());
-		          } else {
-		            System.out.println("File already exists.");
-		          }
-		        } catch (IOException e) {
-		          System.out.println("An error occurred.");
-		          e.printStackTrace();
-		        }
 		      
-		      while (myReader.hasNextLine() && compteur >0) {
-		        String data = myReader.nextLine();
-		        System.out.println(data);
+		      while (st.hasMoreTokens() ) {
+		    	
+		        String myStr = st.nextToken().toString();
 		        
-		        StringTokenizer str = 
-		                new StringTokenizer("data", " ");
-		        if( compteur%2 == 1 ) {
+		    	StringTokenizer st2 = new StringTokenizer( myStr , " ");
+		    	
+		    	System.out.println("myStr " + myStr);
+		    	
+		       
+		       
+		        if( compteur%2 == 1 && compteur > 0 ) {
 		        	int caracCompteur = 0;
 		        	
-		        	while(str.hasMoreTokens()){
-					
+		        	while(st2.hasMoreTokens()){
+		        		
+		        		String theStr = st2.nextToken().toString().trim();
+		        		
+		        		System.out.println("theStr: " + theStr);
+		        		
 		        		if(caracCompteur == 0)
-		        			uneTendeuse.setCoord_x(Integer.parseInt(str.nextToken()));
+		        			uneTendeuse.setCoord_x(Integer.parseInt(theStr));
 		        		if(caracCompteur == 1)
-		        			uneTendeuse.setCoord_y(Integer.parseInt(str.nextToken()));
+		        			uneTendeuse.setCoord_y(Integer.parseInt(theStr));
 		        		if(caracCompteur == 2)
-		        			uneTendeuse.setOrientation(str.nextToken().charAt(0));
+		        			uneTendeuse.setOrientation(theStr.charAt(0));
+		        		
+		        		caracCompteur++;
 		        	
 					}
 		        
 		        }
 		        
-		        if( compteur%2 == 0 ) {
-		        	int caracCompteur = 0;
+		        if( compteur%2 == 0 && compteur > 0 ) {
 		        	
-		        	while(str.hasMoreTokens()){
+		        	while(st2.hasMoreTokens()){
 		        		
-		        		char action = str.nextToken().charAt(caracCompteur);
+		        		String theStr = st2.nextToken().toString().trim();
+		        		
+		        		System.out.println("theStr: " + theStr);
+		        		
+		        		String action  = "";
+		        		int i = 0;
+		        		while(true && i<theStr.length()) {
+		        			
+		        		
+		        		if(!theStr.substring(i, i+1).equalsIgnoreCase("A"))
+		        			action = theStr.substring(i, i+1) + uneTendeuse.getOrientation();
+		        		else
+		        			action = "A";
 					
 		        		switch(action) {
-		        		  case 'G':
-		        		    if(uneTendeuse.getOrientation()=='N')
-		        		    	uneTendeuse.setOrientation('O');
-		        		    if(uneTendeuse.getOrientation()=='O')
-		        		    	uneTendeuse.setOrientation('S');
-		        		    if(uneTendeuse.getOrientation()=='S')
-		        		    	uneTendeuse.setOrientation('E');
-		        		    if(uneTendeuse.getOrientation()=='E')
-		        		    	uneTendeuse.setOrientation('N');
+		        		
+		        		  case "GN":{
+		        		    uneTendeuse.setOrientation('O');
 		        		    break;
+		        		  }
+		        		  case "GO":{
+		        			  uneTendeuse.setOrientation('S');
+		        			  break;
+		        		  }
+		        		  case "GS":{
+		        			  uneTendeuse.setOrientation('E');
+		        			  break;
+	        		  		}
+		        		  case "GE":{
+		        			  uneTendeuse.setOrientation('N');
+		        			  break;
+      		  				}
+		        		  
+		        		  case "DN":{
+		        			  uneTendeuse.setOrientation('E');
+		        			  break;
+    		  				}
+		        		  case "DE":{
+		        			  uneTendeuse.setOrientation('S');
+		        			  break;
+		  					}
+		        		  case "DS":{
+		        			  uneTendeuse.setOrientation('O');
+		        			  break;
+	  						}
+		        		  case "DO":{
+		        			  uneTendeuse.setOrientation('N');
+		        			  break;
+							}
 		        		    
-		        		  case 'D':
-		        		    if(uneTendeuse.getOrientation()=='N')
-		        		    	uneTendeuse.setOrientation('E');
-		        		    if(uneTendeuse.getOrientation()=='E')
-		        		    	uneTendeuse.setOrientation('S');
-		        		    if(uneTendeuse.getOrientation()=='S')
-		        		    	uneTendeuse.setOrientation('O');
-		        		    if(uneTendeuse.getOrientation()=='O')
-		        		    	uneTendeuse.setOrientation('N');
-		        		    break;
+		        			  
+		        			  
+
 		        		    
-		        		  case 'A':
-		        			  if(uneTendeuse.getOrientation()=='N')
+		        		  case "A":
+		        			  
+		        			  if(uneTendeuse.getOrientation()=='N') {
 			        		    	uneTendeuse.setCoord_y(uneTendeuse.getCoord_y() + 1);
-			        		    if(uneTendeuse.getOrientation()=='O')
+			        		    	
+			        		  }
+			        		    if(uneTendeuse.getOrientation()=='O') {
 			        		    	uneTendeuse.setCoord_x(uneTendeuse.getCoord_x() - 1);
-			        		    if(uneTendeuse.getOrientation()=='S')
+			        		    	
+			        		    }
+			        		    if(uneTendeuse.getOrientation()=='S') {
 			        		    	uneTendeuse.setCoord_y(uneTendeuse.getCoord_y() - 1);
-			        		    if(uneTendeuse.getOrientation()=='E')
+			        		    	
+			        		    }
+			        		    if(uneTendeuse.getOrientation()=='E') {
 			        		    	uneTendeuse.setCoord_x(uneTendeuse.getCoord_x() + 1);
-			        		    break;
+			        		    	
+			        		    }
+			        		    
+			        		    
 		        		  
 		        		  default:
 		        		    // code block
 		        		}
-		        		caracCompteur++;
-					}
+		        		i++;
+		        	}
 		        	
+		        	}
 		        	try {
-		        	      FileWriter myWriter = new FileWriter("ResultTestResource");
-		        	      myWriter.write("Files in Java might be tricky, but it is fun enough!");
-		        	      myWriter.close();
-		        	      System.out.println("Successfully wrote to the file.");
-		        	    } catch (IOException e) {
-		        	      System.out.println("An error occurred.");
-		        	      e.printStackTrace();
-		        	    }
-		        
+  			        	
+  			        	String fileName = "src/main/resources/ResultTestResource";
+
+  		                File file = new File(fileName);
+
+  		                // true if file does no exist and was created successfully.
+  		                // false if file is already exists
+  		                if (file.createNewFile()) {
+  		                    System.out.println("File is created!");
+  		                } else {
+  		                    System.out.println("File already exists.");
+  		                }
+
+  		                FileWriter fw = new FileWriter(fileName, true);
+  		                BufferedWriter bw = new BufferedWriter(fw);
+  		                bw.write(uneTendeuse.getCoord_x() + " " + uneTendeuse.getCoord_y() + " " + uneTendeuse.getOrientation());
+  	              
+  		                bw.newLine();
+  		                bw.close();
+  		          
+
+  		            } catch (IOException e) {
+  		                e.printStackTrace();
+  		            }
+		        	
 		        }
 		        
+		        
+		        
 		        compteur++;
+		        
+		        
 		  
 		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
+		      
+		    } catch (Exception e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
 		    }
-	}
-
+		      finally {
+		            System.out.println (":: Finally Block::");
+		            System.out.println ("No Exception::finally block executed");
+		        } 
 	
+		  }
+
 	
 }
