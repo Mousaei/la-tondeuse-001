@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class LaunchMower {
 	
 	//Get the Logger object.
-		private static Logger log = Logger.getLogger(LaunchMower.class.getCanonicalName());
+	private static Logger log = Logger.getLogger(LaunchMower.class.getCanonicalName());
 
 	/**
 	 * 
@@ -40,7 +40,7 @@ public class LaunchMower {
 		properties.setProperty("testResultFileName" , "ResultTestResource");
 		
 		
-		PrepareAndRun runIt = new PrepareAndRun("TestResource" , "ResultTestResource");
+		PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testFileName"));
 		
 	}
 

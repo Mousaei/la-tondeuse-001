@@ -12,12 +12,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.StringTokenizer;
+import java.util.logging.Logger;
 
 /**
  * @author vahidmousaei
  *
  */
 public class PrepareAndRun {
+	
+	//Get the Logger object.
+	private static Logger log = Logger.getLogger(PrepareAndRun.class.getCanonicalName());
 	
 	Mower aMower = new Mower();
 	
@@ -29,6 +33,10 @@ public class PrepareAndRun {
 	 */
 	public PrepareAndRun(String resource, String resultResource) throws IOException {
 		// TODO Auto-generated constructor stub
+		
+		//logger messages
+		log.info("Log4j info message from PrepareAndRun");
+				
 		try {
 		      InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resource);
 		    
@@ -86,18 +94,27 @@ public class PrepareAndRun {
 		        	    System.out.println("Value = " + url);
 		        		
 		        		
-  		                File file = new File("src/main/resources/ResultTestResource");
-
-  		               
-  		                FileWriter fw = new FileWriter(file, true);
-  		                BufferedWriter bw = new BufferedWriter(fw);
-  		                bw.write(aMower.getCoord_x() + " " + aMower.getCoord_y() + " " + aMower.getOrientation());
+  		                try {
+  		                	File file = new File("ResultTestResource");
+  				          if (file.createNewFile()) {
+  				            System.out.println("File created: " + file.getName());
+  				          } else {
+  				            System.out.println("File already exists.");
+  				          }
+  				          
+  				          FileWriter fw = new FileWriter(file, true);
+  				          BufferedWriter bw = new BufferedWriter(fw);
+  				          bw.write(aMower.getCoord_x() + " " + aMower.getCoord_y() + " " + aMower.getOrientation());
   	              
-  		                bw.newLine();
-  		                bw.close();
-  		          
-
-  		            } catch (IOException e) {
+  				          bw.newLine();
+  				          bw.close();
+  				        
+  		                } catch (IOException e) {
+  				          System.out.println("An error occurred.");
+  				          e.printStackTrace();
+  				        }
+  		               
+  		            } catch (Exception e) {
   		                e.printStackTrace();
   		            }
 		        	
