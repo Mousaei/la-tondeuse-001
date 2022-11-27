@@ -42,6 +42,8 @@ public class LaunchMower {
 		
 		PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testResultFileName"));
 		
+		runIt.toString();
+		
 	}
 
 }
