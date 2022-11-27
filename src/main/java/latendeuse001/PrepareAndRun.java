@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.StringTokenizer;
 
 /**
@@ -77,7 +78,12 @@ public class PrepareAndRun {
 		        	
 		        	}
 		        	try {
-  			        	
+		        		
+		        		// finds resource with the given name
+		        	    URL url = getClass().getClassLoader().getResource(resultResource);
+		        	    System.out.println("Value = " + url);
+		        		
+		        		
   		                File file = new File(resultResource);
 
   		                // true if file does no exist and was created successfully.
@@ -111,7 +117,7 @@ public class PrepareAndRun {
 		      e.printStackTrace();
 		    }
 		      finally {
-		            System.out.println (":: Finally Block::");
+		            System.out.println ("Finally Block::");
 		        } 
 	
 		  }

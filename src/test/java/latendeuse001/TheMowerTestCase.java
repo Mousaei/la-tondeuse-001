@@ -50,12 +50,16 @@ public class TheMowerTestCase {
 	/**
 	 * 
 	 */
+	/**
+	 * 
+	 */
 	@Test
 	public void test() {
 		//fail("Not yet implemented");
 	}
 	
-	 /**
+	
+	/**
 	 * @throws FileNotFoundException
 	 */
 	@Test  
@@ -86,7 +90,7 @@ public class TheMowerTestCase {
 	@Test
 	 public void testResult() {
 		 try {
-			 PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/test/resources/ResultTestResource");
+			 PrepareAndRun runIt = new PrepareAndRun("TestResource", "ResultTestResource");
 		 }
 		 catch (Exception e) {
 			 System.out.println("An error occurred.");

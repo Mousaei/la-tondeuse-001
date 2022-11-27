@@ -32,7 +32,7 @@ public class LaunchMower {
 		//logger messages
 		log.info("Log4j info message from LaunchMower");
 		
-		PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/main/resources/ResultTestResource");
+		PrepareAndRun runIt = new PrepareAndRun("TestResource", "ResultTestResource");
 		
 	}
 
