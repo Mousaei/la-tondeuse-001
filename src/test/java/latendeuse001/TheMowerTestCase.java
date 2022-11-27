@@ -67,7 +67,7 @@ public class TheMowerTestCase {
 		 
 		 try {
 		      try {
-		          File resultFile = new File("src/test/resources/ResultTestResource/");
+		    	  File resultFile = new File("src/test/resources/ResultTestResource/");
 		          if (resultFile.createNewFile()) {
 		            System.out.println("File created: " + resultFile.getName());
 		          } else {
@@ -87,14 +87,4 @@ public class TheMowerTestCase {
 	 /**
 	 * 
 	 */
-	@Test
-	 public void testResult() {
-		 try {
-			 PrepareAndRun runIt = new PrepareAndRun("TestResource", "ResultTestResource");
-		 }
-		 catch (Exception e) {
-			 System.out.println("An error occurred.");
-			 e.printStackTrace();
-		 }
-	 }
 }

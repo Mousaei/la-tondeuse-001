@@ -31,6 +31,8 @@ public class PrepareAndRun {
 		// TODO Auto-generated constructor stub
 		try {
 		      InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resource);
+		    
+		      
 		      //creating an InputStreamReader object
 		      InputStreamReader isReader = new InputStreamReader(inputStream);
 		      //Creating a BufferedReader object
@@ -84,17 +86,10 @@ public class PrepareAndRun {
 		        	    System.out.println("Value = " + url);
 		        		
 		        		
-  		                File file = new File(resultResource);
+  		                File file = new File("src/main/resources/ResultTestResource");
 
-  		                // true if file does no exist and was created successfully.
-  		                // false if file is already exists
-  		                if (file.createNewFile()) {
-  		                    System.out.println("File is created!");
-  		                } else {
-  		                    System.out.println("File already exists.");
-  		                }
-
-  		                FileWriter fw = new FileWriter(resultResource, true);
+  		               
+  		                FileWriter fw = new FileWriter(file, true);
   		                BufferedWriter bw = new BufferedWriter(fw);
   		                bw.write(aMower.getCoord_x() + " " + aMower.getCoord_y() + " " + aMower.getOrientation());
   	              

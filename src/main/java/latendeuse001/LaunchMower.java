@@ -4,6 +4,7 @@
 package latendeuse001;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
@@ -32,7 +33,14 @@ public class LaunchMower {
 		//logger messages
 		log.info("Log4j info message from LaunchMower");
 		
-		PrepareAndRun runIt = new PrepareAndRun("TestResource", "ResultTestResource");
+		Properties properties = new Properties();
+		
+		properties.setProperty("testFileName" , "TestResource");
+		
+		properties.setProperty("testResultFileName" , "ResultTestResource");
+		
+		
+		PrepareAndRun runIt = new PrepareAndRun("TestResource" , "ResultTestResource");
 		
 	}
 
