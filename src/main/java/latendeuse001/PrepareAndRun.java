@@ -89,25 +89,14 @@ public class PrepareAndRun {
 		        	}
 		        	try {
 		        		
-		        		// finds resource with the given name
-		        	    URL url = getClass().getClassLoader().getResource(resultResource);
-		        	    System.out.println("Value = " + url);
-		        		
-		        		
-  		                try {
-  		                	File file = new File("ResultTestResource");
-  				          if (file.createNewFile()) {
-  				            System.out.println("File created: " + file.getName());
-  				          } else {
-  				            System.out.println("File already exists.");
-  				          }
-  				          
-  				          FileWriter fw = new FileWriter(file, true);
-  				          BufferedWriter bw = new BufferedWriter(fw);
-  				          bw.write(aMower.getCoord_x() + " " + aMower.getCoord_y() + " " + aMower.getOrientation());
+		        		try {
+  		                	
+  			        		FileWriter fw = new FileWriter(resultResource, true);
+  			        		BufferedWriter bw = new BufferedWriter(fw);
+  			        		bw.write(aMower.getCoord_x() + " " + aMower.getCoord_y() + " " + aMower.getOrientation());
   	              
-  				          bw.newLine();
-  				          bw.close();
+  			        		bw.newLine();
+  			        		bw.close();
   				        
   		                } catch (IOException e) {
   				          System.out.println("An error occurred.");

@@ -40,7 +40,7 @@ public class LaunchMower {
 		properties.setProperty("testResultFileName" , "ResultTestResource");
 		
 		
-		PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testFileName"));
+		PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testResultFileName"));
 		
 	}
 
