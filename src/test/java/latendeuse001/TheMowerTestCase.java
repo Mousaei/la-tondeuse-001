@@ -47,12 +47,18 @@ public class TheMowerTestCase {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void test() {
 		//fail("Not yet implemented");
 	}
 	
-	 @Test  
+	 /**
+	 * @throws FileNotFoundException
+	 */
+	@Test  
 	 public void testResultAndTestResources() throws FileNotFoundException{
 		 
 		 try {
@@ -74,7 +80,10 @@ public class TheMowerTestCase {
 	     }
 	 }
 	 
-	 @Test
+	 /**
+	 * 
+	 */
+	@Test
 	 public void testResult() {
 		 try {
 			 PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/test/resources/ResultTestResource");
