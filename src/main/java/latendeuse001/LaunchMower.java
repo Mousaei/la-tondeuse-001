@@ -37,7 +37,7 @@ public class LaunchMower {
 		
 		properties.setProperty("testFileName" , "TestResource");
 		
-		properties.setProperty("testResultFileName" , "ResultTestResource");
+		properties.setProperty("testResultFileName" , "/Users/vahidmousaei/eclipse-workspace/latendeuse001/src/main/resources/ResultTestResource");
 		
 		
 		PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testResultFileName"));
