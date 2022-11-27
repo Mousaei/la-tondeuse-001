@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author vahidmousaei
  *
  */
-public class LaTendeuseTestCase {
+public class TheMowerTestCase {
 
 	/**
 	 * @throws java.lang.Exception
@@ -56,12 +56,8 @@ public class LaTendeuseTestCase {
 	 public void testResultAndTestResources() throws FileNotFoundException{
 		 
 		 try {
-		      File testFile = new File("TestResource");
-		      
-		      int compteur = 0;
-		      
 		      try {
-		          File resultFile = new File("ResultTestResource");
+		          File resultFile = new File("src/test/resources/ResultTestResource/");
 		          if (resultFile.createNewFile()) {
 		            System.out.println("File created: " + resultFile.getName());
 		          } else {
@@ -76,6 +72,16 @@ public class LaTendeuseTestCase {
 	          System.out.println("An error occurred.");
 	          e.printStackTrace();
 	     }
-	 } 
-
+	 }
+	 
+	 @Test
+	 public void testResult() {
+		 try {
+			 PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/test/resources/ResultTestResource");
+		 }
+		 catch (Exception e) {
+			 System.out.println("An error occurred.");
+			 e.printStackTrace();
+		 }
+	 }
 }

@@ -9,12 +9,12 @@ import java.io.IOException;
  * @author vahidmousaei
  *
  */
-public class LaunchTendeuse {
+public class LaunchMower {
 
 	/**
 	 * 
 	 */
-	public LaunchTendeuse() {
+	public LaunchMower() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -25,7 +25,7 @@ public class LaunchTendeuse {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		PrepareAndRun runIt = new PrepareAndRun();
+		PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/main/resources/ResultTestResource");
 		
 	}
 

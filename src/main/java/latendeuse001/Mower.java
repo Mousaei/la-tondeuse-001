@@ -7,22 +7,19 @@ package latendeuse001;
  * @author vahidmousaei
  *
  */
-public class Tendeuse {
+public class Mower {
 	
 	private int coord_x;
 	private int coord_y;
 	private char orientation;
 	
 	
-
 	/**
 	 * 
 	 */
-	public Tendeuse() {
+	public Mower() {
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	/**
 	 * @return the coord_x
@@ -31,15 +28,12 @@ public class Tendeuse {
 		return coord_x;
 	}
 
-
-
 	/**
 	 * @param coord_x the coord_x to set
 	 */
 	public void setCoord_x(int coord_x) {
 		this.coord_x = coord_x;
 	}
-
 
 
 	/**
@@ -50,14 +44,12 @@ public class Tendeuse {
 	}
 
 
-
 	/**
 	 * @param coord_y the coord_y to set
 	 */
 	public void setCoord_y(int coord_y) {
 		this.coord_y = coord_y;
 	}
-
 
 
 	/**
@@ -68,15 +60,12 @@ public class Tendeuse {
 	}
 
 
-
 	/**
 	 * @param orientation the orientation to set
 	 */
 	public void setOrientation(char orientation) {
 		this.orientation = orientation;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -89,16 +78,15 @@ public class Tendeuse {
 	}
 
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
 		}
-		if (!(obj instanceof Tendeuse)) {
+		if (!(obj instanceof Mower)) {
 			return false;
 		}
-		Tendeuse other = (Tendeuse) obj;
+		Mower other = (Mower) obj;
 		if (coord_x != other.coord_x) {
 			return false;
 		}
@@ -111,13 +99,9 @@ public class Tendeuse {
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Tendeuse [coord_x=" + coord_x + ", coord_y=" + coord_y + ", orientation=" + orientation + "]";
+		return "Mower [coord_x=" + coord_x + ", coord_y=" + coord_y + ", orientation=" + orientation + "]";
 	}
 	
-	
-
 }
