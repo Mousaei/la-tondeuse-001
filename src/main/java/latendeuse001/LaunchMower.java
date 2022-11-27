@@ -4,12 +4,16 @@
 package latendeuse001;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * @author vahidmousaei
  *
  */
 public class LaunchMower {
+	
+	//Get the Logger object.
+		private static Logger log = Logger.getLogger(LaunchMower.class.getCanonicalName());
 
 	/**
 	 * 
@@ -24,6 +28,9 @@ public class LaunchMower {
 	 */
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
+		
+		//logger messages
+		log.info("Log4j info message from LaunchMower");
 		
 		PrepareAndRun runIt = new PrepareAndRun("TestResource", "src/main/resources/ResultTestResource");
 		

@@ -21,6 +21,8 @@ public class PrepareAndRun {
 	Mower aMower = new Mower();
 	
 	/**
+	 * @param resource 
+	 * @param resultResource 
 	 * @throws IOException 
 	 * 
 	 */
@@ -53,9 +55,6 @@ public class PrepareAndRun {
 		        
 		    	StringTokenizer st2 = new StringTokenizer( myStr , " ");
 		    	
-		    	System.out.println("myStr " + myStr);
-		    	
-		       
 		    	if( compteur%2 == 1 && compteur > 0 ) {
 		        	
 		        	//Set the mower position
@@ -69,8 +68,6 @@ public class PrepareAndRun {
 		        	while(st2.hasMoreTokens()){
 		        		
 		        		String theStr = st2.nextToken().toString().trim();
-		        		
-		        		System.out.println("theStr: " + theStr);
 		        		
 		        		String action  = "";
 		        		int i = 0;
@@ -115,7 +112,6 @@ public class PrepareAndRun {
 		    }
 		      finally {
 		            System.out.println (":: Finally Block::");
-		            System.out.println ("No Exception::finally block executed");
 		        } 
 	
 		  }
@@ -132,8 +128,6 @@ public class PrepareAndRun {
 		while(st2.hasMoreTokens()){
 		
 			String theStr = st2.nextToken().toString().trim();
-		
-			System.out.println("theStr: " + theStr);
 		
 			if(caracCompteur == 0)
 				aMower.setCoord_x(Integer.parseInt(theStr));
