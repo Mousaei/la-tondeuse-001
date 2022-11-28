@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="latendeuse001.TheMowerTestCase" time="0.003" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="latendeuse001.TheMowerTestCase" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/vahidmousaei/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf16601624408753524393.tmp"/>
+    <property name="classworlds.conf" value="/Users/vahidmousaei/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf13190605643496556858.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/vahidmousaei/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -64,6 +64,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="latendeuse001.TheMowerTestCase" name="test" time="0.003"/>
+  <testcase classname="latendeuse001.TheMowerTestCase" name="test" time="0.004"/>
   <testcase classname="latendeuse001.TheMowerTestCase" name="testResultAndTestResources" time="0"/>
 </testsuite>

@@ -27,6 +27,8 @@
 	</dependency>
 </dependencies>
 
+
+ 
 <!-- this goes within <build> -->
 <build>
 <plugins>
@@ -46,6 +48,26 @@
 
     	</configuration>
 	</plugin>
+	
+	<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>properties-maven-plugin</artifactId>
+    <version>1.0.0</version>
+    <executions>
+      <execution>
+        <phase>initialize</phase>
+        <goals>
+          <goal>read-project-properties</goal>
+        </goals>
+      </execution>
+    </executions>
+    <configuration>
+      <files>
+        <file>src/main/resources/prod.properties</file>
+      </files>
+    </configuration>
+  </plugin>
+  
 </plugins>
 </build>
 <!-- other properties -->
