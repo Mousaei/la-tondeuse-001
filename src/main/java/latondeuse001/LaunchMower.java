@@ -1,7 +1,7 @@
 /**
  * 
  */
-package latendeuse001;
+package latondeuse001;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class LaunchMower {
 		
 		properties.setProperty("testFileName" , "TestResource");
 		
-		//properties.setProperty("testResultFileName" , "/Users/vahidmousaei/eclipse-workspace/latendeuse001/src/main/resources/ResultTestResource");
+		//properties.setProperty("testResultFileName" , "/Users/vahidmousaei/eclipse-workspace/latondeuse001/src/main/resources/ResultTestResource");
 		
 		java.net.URL url = ClassLoader.getSystemResource("prod.properties");
 
