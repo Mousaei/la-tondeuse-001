@@ -22,7 +22,6 @@ public class LaunchMower {
 	 * 
 	 */
 	public LaunchMower() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -39,8 +38,6 @@ public class LaunchMower {
 		
 		properties.setProperty("testFileName" , "TestResource");
 		
-		//properties.setProperty("testResultFileName" , "/Users/vahidmousaei/eclipse-workspace/latondeuse001/src/main/resources/ResultTestResource");
-		
 		java.net.URL url = ClassLoader.getSystemResource("prod.properties");
 
         try  {
@@ -51,15 +48,15 @@ public class LaunchMower {
         catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(properties.getProperty("testFileName"));
-        System.out.println(properties.getProperty("testResultFileName"));
+        log.info("testFileName");
+        log.info(properties.getProperty("testResultFileName"));
         PrepareAndRun runIt = new PrepareAndRun(properties.getProperty("testFileName") , properties.getProperty("testResultFileName"));
 		
 		runIt.toString();
 		
         Set<String> keys = properties.stringPropertyNames();
         for (String key : keys) {
-            System.out.println(key + " - " + properties.getProperty(key));
+        	log.info(key + " - " + properties.getProperty(key));
         }
     }
 }

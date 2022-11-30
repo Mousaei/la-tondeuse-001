@@ -49,10 +49,8 @@ public class PrepareAndRun {
 		    	  
 		         sb.append(str + ";" );
 		      }
-		      System.out.println(sb.toString());
+		      log.info(sb.toString());
 	          
-		      
-		      
 		      StringTokenizer st= new StringTokenizer(sb.toString(), ";");
 		      
 		      int compteur = 0;
@@ -97,7 +95,7 @@ public class PrepareAndRun {
   			        		bw.close();
   				        
   		                } catch (IOException e) {
-  				          System.out.println("An error occurred.");
+  		                	log.info("An error occurred.");
   				          e.printStackTrace();
   				        }
   		               
@@ -112,11 +110,11 @@ public class PrepareAndRun {
 		      }
 		      
 		    } catch (Exception e) {
-		      System.out.println("An error occurred.");
+		    	log.info("An error occurred.");
 		      e.printStackTrace();
 		    }
 		      finally {
-		            System.out.println ("Finally Block::");
+		    	  log.info("Finally Block::");
 		        } 
 	
 		  }
@@ -219,8 +217,6 @@ public class PrepareAndRun {
     		    }
     		    
     	default:
-		    // code block
-		
 		}
 		
 		i++;

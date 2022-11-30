@@ -6,6 +6,7 @@ package latondeuse001;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -18,6 +19,9 @@ import org.junit.Test;
  *
  */
 public class TheMowerTestCase {
+	
+	//Get the Logger object.
+	private static Logger log = Logger.getLogger(TheMowerTestCase.class.getCanonicalName());
 
 	/**
 	 * @throws java.lang.Exception
@@ -69,17 +73,17 @@ public class TheMowerTestCase {
 		      try {
 		    	  File resultFile = new File("src/test/resources/ResultTestResource/");
 		          if (resultFile.createNewFile()) {
-		            System.out.println("File created: " + resultFile.getName());
+		        	  log.info("File created: " + resultFile.getName());
 		          } else {
-		            System.out.println("File already exists.");
+		        	  log.info("File already exists.");
 		          }
 		        } catch (IOException e) {
-		          System.out.println("An error occurred.");
+		        	log.info("An error occurred.");
 		          e.printStackTrace();
 		        }
 		 }
 		 catch (Exception e) {
-	          System.out.println("An error occurred.");
+			 log.info("An error occurred.");
 	          e.printStackTrace();
 	     }
 	 }
