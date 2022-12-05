@@ -1,4 +1,4 @@
-# 001 - la-tendeuse-001 Please set the prod.properties file with your system values:
+# 001 - la-tondeuse-001 Please set the prod.properties file with your system values:
 testFileName = TestResource
 testResultFileName = /Users/vahidmousaei/eclipse-workspace/latondeuse001/src/main/resources/ResultTestResource
 # 002 - Go to target directory and execute this command to run the program:java -jar latondeuse001-0.0.1-SNAPSHOT.jar
